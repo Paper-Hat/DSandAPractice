@@ -1,0 +1,14 @@
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\bin\Debug\net8.0\DSandAPractice.exe
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\bin\Debug\net8.0\DSandAPractice.deps.json
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\bin\Debug\net8.0\DSandAPractice.runtimeconfig.json
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\bin\Debug\net8.0\DSandAPractice.dll
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\bin\Debug\net8.0\DSandAPractice.pdb
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.AssemblyInfoInputs.cache
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.AssemblyInfo.cs
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.csproj.CoreCompileInputs.cache
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.dll
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\refint\DSandAPractice.dll
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.pdb
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.genruntimeconfig.cache
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\ref\DSandAPractice.dll
