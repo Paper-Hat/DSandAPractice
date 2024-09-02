@@ -13,6 +13,7 @@ public class DSA_LinkedList
     {
         
     }
+    
     public DSA_LinkedList(List<int> starterValues)
     {
         foreach (int value in starterValues) {
@@ -132,7 +133,7 @@ public class DSA_LinkedList
             }
         }
     }
-
+    
     public override string ToString()
     {
         StringBuilder sb = new StringBuilder();

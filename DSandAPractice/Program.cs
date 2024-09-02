@@ -11,3 +11,14 @@ ll.RemoveLast();
 Console.WriteLine(ll.ToString());
 */
 
+/*List<int> testTreeValues = [40, 30, 50, 25, 35, 45, 46, 60];
+DSA_BinarySearchTree bst = new DSA_BinarySearchTree(testTreeValues);
+bst.PrintInOrderTraversal();
+bst.Delete(40);
+Console.WriteLine();
+bst.PrintInOrderTraversal();
+Console.WriteLine("\n"+ bst.Root.value);
+Console.WriteLine(bst.MinValue(bst.Root).value);
+Console.WriteLine(bst.MaxValue(bst.Root).value);
+Console.WriteLine("\n" + bst.MinValue(bst.Search(35)).value);
+Console.WriteLine(bst.Search(30));*/

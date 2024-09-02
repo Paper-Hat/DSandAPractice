@@ -12,3 +12,4 @@ C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\refin
 C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.pdb
 C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.genruntimeconfig.cache
 C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\ref\DSandAPractice.dll
+C:\Users\justi\Desktop\Dev\Projects\DSandA\DSandAPractice\obj\Debug\net8.0\DSandAPractice.sourcelink.json
