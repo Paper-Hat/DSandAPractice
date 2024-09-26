@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\justi\\Desktop\\Dev\\Projects\\DSandA\\DSandAPractice\\DSandAPractice.csproj",
+      "projectUniqueName": "C:\\Users\\justi\\Desktop\\Dev\\Study_Projects\\DSandA\\DSandAPractice\\DSandAPractice.csproj",
       "projectName": "DSandAPractice",
-      "projectPath": "C:\\Users\\justi\\Desktop\\Dev\\Projects\\DSandA\\DSandAPractice\\DSandAPractice.csproj",
+      "projectPath": "C:\\Users\\justi\\Desktop\\Dev\\Study_Projects\\DSandA\\DSandAPractice\\DSandAPractice.csproj",
       "packagesPath": "C:\\Users\\justi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\justi\\Desktop\\Dev\\Projects\\DSandA\\DSandAPractice\\obj\\",
+      "outputPath": "C:\\Users\\justi\\Desktop\\Dev\\Study_Projects\\DSandA\\DSandAPractice\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\justi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

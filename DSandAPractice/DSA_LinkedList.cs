@@ -5,32 +5,34 @@ namespace DSandAPractice;
 /// <summary>
 /// Practice implementation of a LinkedList of integers
 /// </summary>
-public class DSA_LinkedList
+public class DSA_LinkedList<T>
 {
-    private DSA_LinkedListNode? _head = null;
-
+    public DSA_LinkedListNode<T>? Head = null;
+    public DSA_LinkedListNode<T>? Tail = null;
     public DSA_LinkedList()
     {
         
     }
     
-    public DSA_LinkedList(List<int> starterValues)
+    public DSA_LinkedList(List<T> starterValues)
     {
-        foreach (int value in starterValues) {
+        foreach (var value in starterValues) {
             Add(value);
         }
     }
-    public void Add(int value)
+    public void Add(T value)
     {
-        if (_head == null) {
-            _head = new DSA_LinkedListNode(value);
+        if (Head == null) {
+            Head = new DSA_LinkedListNode<T>(value);
+            Tail = Head;
             return;
         }
-        DSA_LinkedListNode currentRef = _head;
+        DSA_LinkedListNode<T> currentRef = Head;
         while (currentRef.next != null) {
             currentRef = currentRef.next;
         }
-        currentRef.next = new DSA_LinkedListNode(value);
+        currentRef.next = new DSA_LinkedListNode<T>(value);
+        Tail = currentRef.next;
 
     }
     
@@ -38,29 +40,29 @@ public class DSA_LinkedList
     /// Inserts node with value = v at index i if length is supported
     /// </summary>
     /// <param name="value"></param>
-    public void Insert(int v, int i)
+    public void Insert(T v, int i)
     {
-        if (_head == null)
+        if (Head == null)
         {
             if (i == 0)
-                _head = new DSA_LinkedListNode(v);
+                Head = new DSA_LinkedListNode<T>(v);
         }
         else if (i == 0)
         {
-            DSA_LinkedListNode temp = _head;
-            _head = new DSA_LinkedListNode(v);
-            _head.next = temp;
+            DSA_LinkedListNode<T> temp = Head;
+            Head = new DSA_LinkedListNode<T>(v);
+            Head.next = temp;
         }
         else
         {
             int count = 0;
-            DSA_LinkedListNode current = _head;
+            DSA_LinkedListNode<T> current = Head;
             while (current.next != null && count <= i)
             {
                 if (count+1 == i)
                 {
-                    DSA_LinkedListNode temp = current.next;
-                    current.next = new DSA_LinkedListNode(v);
+                    DSA_LinkedListNode<T> temp = current.next;
+                    current.next = new DSA_LinkedListNode<T>(v);
                     current.next.next = temp;
                     return;
                 }
@@ -76,23 +78,23 @@ public class DSA_LinkedList
     /// Removes the first element with value specified; if none, prints that no elements were removed.
     /// </summary>
     /// <param name="value"></param>
-    public void RemoveElementWithValue(int value)
+    public void RemoveElementWithValue(T value)
     {
-        if (_head == null) {
+        if (Head == null) {
             Console.WriteLine("Head is null. Cannot perform remove on LinkedList with no elements");
         }
-        else if (_head.value == value)
+        else if (Head.value.Equals(value))
         {
-            if (_head.next != null) {
-                _head = _head.next;
+            if (Head.next != null) {
+                Head = Head.next;
             }
         }
         else {
-            DSA_LinkedListNode current = _head;
+            DSA_LinkedListNode<T> current = Head;
 
             while (current.next != null)
             {
-                if (current.next.value == value) {
+                if (current.next.value.Equals(value)) {
                     if (current.next.next != null) {
                         current.next = current.next.next;
                         break;
@@ -107,37 +109,11 @@ public class DSA_LinkedList
             Console.WriteLine("Element not found.");
         }
     }
-
-    /// <summary>
-    /// Removes the last node in the LinkedList
-    /// </summary>
-    public void RemoveLast()
-    {
-        if (_head == null) {
-            Console.WriteLine("Head is null. Cannot perform remove on LinkedList with no elements");
-        }
-        else if(_head.next == null)
-        {
-            _head = null;
-        }
-        else
-        {
-            DSA_LinkedListNode current = _head;
-            while (current.next != null) {
-                if (current.next.next == null)
-                {
-                    current.next = null;
-                    break;
-                }
-                current = current.next;
-            }
-        }
-    }
     
     public override string ToString()
     {
         StringBuilder sb = new StringBuilder();
-        DSA_LinkedListNode? current = _head;
+        DSA_LinkedListNode<T>? current = Head;
         while (current != null)
         {
             sb.Append(current.value);
@@ -148,15 +124,12 @@ public class DSA_LinkedList
         
         return sb.ToString();
     }
-    
 }
 
-public class DSA_LinkedListNode
+public class DSA_LinkedListNode<T> : DSA_Node<T>
 {
-    public DSA_LinkedListNode? next = null;
-    public int value;
-
-    public DSA_LinkedListNode(int v)
+    public DSA_LinkedListNode<T> next;
+    public DSA_LinkedListNode(T v)
     {
         value = v;
     }

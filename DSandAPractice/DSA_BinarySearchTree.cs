@@ -6,10 +6,10 @@ namespace DSandAPractice;
 /// Simple implementation of BST containing integer values
 /// Assumes duplicate elements are not allowed
 /// </summary>
-public class DSA_BinarySearchTree
+public class DSA_BinarySearchTree<T> where T:IComparable
 {
     //defined root
-    public DSA_BinaryTreeNode? Root;
+    public DSA_BinaryTreeNode<T>? Root;
 
     //empty constructor
     public DSA_BinarySearchTree()
@@ -20,33 +20,33 @@ public class DSA_BinarySearchTree
     /// Allows for creating a BST sequentially with a list
     /// </summary>
     /// <param name="treeValues"></param>
-    public DSA_BinarySearchTree(List<int> treeValues)
+    public DSA_BinarySearchTree(List<T> treeValues)
     {
         treeValues = treeValues.Distinct().ToList();
-        foreach (int v in treeValues)
+        foreach (var v in treeValues)
         {
             Insert(Root, v);
         }
     }
 
-    public DSA_BinaryTreeNode? Search(int value)
+    public DSA_BinaryTreeNode<T>? Search(T value)
     {
         return Search(Root, value);
     }
     
-    private DSA_BinaryTreeNode? Search(DSA_BinaryTreeNode? node, int value)
+    private DSA_BinaryTreeNode<T>? Search(DSA_BinaryTreeNode<T>? node, T value)
     {
         //base case is if the node's value is equal to the search value, or if our node is null
-        if (node == null || node.value == value)
+        if (node == null || node.value.Equals(value))
             return node;
-        if (value < node.value)
+        if (value.CompareTo(node.value) < 0)
             node = Search(node.LeftChild, value);
-        else if (value > node.value)
+        else if (value.CompareTo(node.value) > 0)
             node = Search(node.RightChild, value);
         return node;
     }
 
-    public DSA_BinaryTreeNode? FindParentToNode(int v)
+    public DSA_BinaryTreeNode<T>? FindParentToNode(T v)
     {
         return FindParentToNode(Root, v);
     }
@@ -56,34 +56,34 @@ public class DSA_BinarySearchTree
     /// </summary>
     /// <param name="value"></param>
     /// <returns></returns>
-    public DSA_BinaryTreeNode? FindParentToNode(DSA_BinaryTreeNode? node, int v)
+    public DSA_BinaryTreeNode<T>? FindParentToNode(DSA_BinaryTreeNode<T>? node, T v)
     {
-        if (node == null || node.ChildCount() == 0 || node.LeftChild?.value == v || node.RightChild?.value == v) {
+        if (node == null || node.ChildCount() == 0 || node.LeftChild.value.Equals(v) || node.RightChild.value.Equals(v)) {
             return node;
         }
-        if (v < node.value)
+        if (v.CompareTo(node.value) < 0)
             node = FindParentToNode(node.LeftChild, v);
-        else if (v > node.value)
+        else if (v.CompareTo(node.value) > 0)
             node = FindParentToNode(node.RightChild, v);
         return node;
     }
-    public DSA_BinaryTreeNode Insert(DSA_BinaryTreeNode? node, int value)
+    public DSA_BinaryTreeNode<T> Insert(DSA_BinaryTreeNode<T>? node, T value)
     {
         if (Root == null) {
-            Root = new DSA_BinaryTreeNode(value);
+            Root = new DSA_BinaryTreeNode<T>(value);
             return Root;
         }
         
         if (node == null)
         {
-            return new DSA_BinaryTreeNode(value);
+            return new DSA_BinaryTreeNode<T>(value);
         }
         //need to set up references to children to "connect" the tree
-        if (value < node.value)
+        if (value.CompareTo(node.value) < 0)
         {
             node.LeftChild = Insert(node.LeftChild, value);
         }
-        else if (value > node.value)
+        else if (value.CompareTo(node.value) > 0)
         {
             node.RightChild = Insert(node.RightChild, value);
         }
@@ -96,26 +96,26 @@ public class DSA_BinarySearchTree
         return node;
     }
 
-    public DSA_BinaryTreeNode Delete(int value)
+    public DSA_BinaryTreeNode<T> Delete(T value)
     {
         //returns modified root of BST
         return Delete(Root, value);
     }
 
-    public DSA_BinaryTreeNode Delete(DSA_BinaryTreeNode? node, int v)
+    public DSA_BinaryTreeNode<T> Delete(DSA_BinaryTreeNode<T>? node, T v)
     {
         if (node == null)
             return node;
-        if (v < node.value)
+        if (v.CompareTo(node.value) < 0)
             node.LeftChild = Delete(node.LeftChild, v);
-        else if (v > node.value)
+        else if (v.CompareTo(node.value) > 0)
             node.RightChild = Delete(node.RightChild, v);
         else{
             if (node.LeftChild == null)
                 return node.RightChild;
             if (node.RightChild == null)
                 return node.LeftChild;
-            DSA_BinaryTreeNode min = MinValue(node.RightChild);
+            DSA_BinaryTreeNode<T> min = MinValue(node.RightChild);
             //replace current with min
             node.value = min.value;
             node.RightChild = Delete(node.RightChild, min.value);
@@ -130,7 +130,7 @@ public class DSA_BinarySearchTree
     /// </summary>
     /// <param name="node"></param>
     /// <returns></returns>
-    public DSA_BinaryTreeNode MinValue(DSA_BinaryTreeNode? node)
+    public DSA_BinaryTreeNode<T> MinValue(DSA_BinaryTreeNode<T>? node)
     {
         if (node != null && node.LeftChild == null)
             return node;
@@ -138,7 +138,7 @@ public class DSA_BinarySearchTree
         return node;
     }
 
-    public DSA_BinaryTreeNode MaxValue(DSA_BinaryTreeNode node)
+    public DSA_BinaryTreeNode<T> MaxValue(DSA_BinaryTreeNode<T> node)
     {
         if (node.RightChild == null) {
             return node;
@@ -150,7 +150,7 @@ public class DSA_BinarySearchTree
     {
         PrintInOrderTraversal(Root);
     }
-    private void PrintInOrderTraversal(DSA_BinaryTreeNode? node)
+    private void PrintInOrderTraversal(DSA_BinaryTreeNode<T>? node)
     {
         if (node != null)
         {
@@ -162,12 +162,11 @@ public class DSA_BinarySearchTree
     
 }
 
-public class DSA_BinaryTreeNode
+public class DSA_BinaryTreeNode<T> : DSA_Node<T>
 {
-    public int value;
-    public DSA_BinaryTreeNode? LeftChild, RightChild;
+    public DSA_BinaryTreeNode<T>? LeftChild, RightChild;
     
-    public DSA_BinaryTreeNode(int v)
+    public DSA_BinaryTreeNode(T v)
     {
         value = v;
         LeftChild = null;

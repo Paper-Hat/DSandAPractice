@@ -22,3 +22,23 @@ Console.WriteLine(bst.MinValue(bst.Root).value);
 Console.WriteLine(bst.MaxValue(bst.Root).value);
 Console.WriteLine("\n" + bst.MinValue(bst.Search(35)).value);
 Console.WriteLine(bst.Search(30));*/
+Console.WriteLine("Hello World!");
+
+/*DSA_Stack<int> stack = new DSA_Stack<int>(new List<int>{10, 4, 2, 5, 6});
+Console.WriteLine(stack.Peek());
+stack.Push(4);
+stack.Push(23);
+stack.Pop();
+Console.WriteLine(stack.Peek());*/
+
+/*<int> queue = new DSA_Queue<int>(new List<int>{10, 9, 8, 7, 4, 24});
+Console.WriteLine(queue.Peek());
+Console.WriteLine(queue.Dequeue());
+queue.Dequeue();
+queue.Enqueue(64);
+Console.WriteLine(queue);*/
+
+/*DSA_Graph<int> graph = new DSA_Graph<int>();
+graph.Add(6, graph.AddAdjacentUndirected(new List<int>{1, 2, 3, 4, 5, 7}));
+graph.Add(24, new List<int>{8, 9, 10, 11});
+Console.WriteLine(graph);*/
