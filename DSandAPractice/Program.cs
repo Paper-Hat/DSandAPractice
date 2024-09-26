@@ -38,7 +38,10 @@ queue.Dequeue();
 queue.Enqueue(64);
 Console.WriteLine(queue);*/
 
-/*DSA_Graph<int> graph = new DSA_Graph<int>();
-graph.Add(6, graph.AddAdjacentUndirected(new List<int>{1, 2, 3, 4, 5, 7}));
-graph.Add(24, new List<int>{8, 9, 10, 11});
-Console.WriteLine(graph);*/
+/*
+DSA_Graph<int> graph = new DSA_Graph<int>();
+graph.Add(6, graph.AddAdjacentUndirected(new List<int>{1, 2, 3, 4, 5, 7}), false);
+graph.Add(24, new List<int>{7, 8, 9, 10, 11}, false);
+Console.WriteLine(graph);
+Console.WriteLine(graph.DepthFirstSearch(graph[7], 7));
+*/
