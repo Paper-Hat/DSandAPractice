@@ -1,4 +1,4 @@
-﻿namespace DSandAPractice;
+﻿namespace DSandAPractice.Structures;
 
 /// <summary>
 /// Implementation of a stack using our previous DSA_LinkedList

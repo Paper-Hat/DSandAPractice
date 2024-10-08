@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace DSandAPractice;
+namespace DSandAPractice.Structures;
 
 public class DSA_Graph<T>
 {

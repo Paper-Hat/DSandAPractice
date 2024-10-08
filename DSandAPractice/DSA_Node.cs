@@ -1,4 +1,4 @@
-﻿namespace DSandAPractice;
+﻿namespace DSandAPractice.Structures;
 
 public class DSA_Node<T>
 {

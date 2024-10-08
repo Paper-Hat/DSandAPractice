@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace DSandAPractice;
+namespace DSandAPractice.Structures;
 
 /// <summary>
 /// Simple implementation of BST containing integer values
@@ -138,9 +138,9 @@ public class DSA_BinarySearchTree<T> where T:IComparable
         return node;
     }
 
-    public DSA_BinaryTreeNode<T> MaxValue(DSA_BinaryTreeNode<T> node)
+    public DSA_BinaryTreeNode<T> MaxValue(DSA_BinaryTreeNode<T>? node)
     {
-        if (node.RightChild == null) {
+        if (node != null && node.RightChild == null) {
             return node;
         }
         node = MaxValue(node.RightChild);

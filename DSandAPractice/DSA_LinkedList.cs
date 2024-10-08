@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace DSandAPractice;
+namespace DSandAPractice.Structures;
 
 /// <summary>
 /// Practice implementation of a LinkedList of integers
