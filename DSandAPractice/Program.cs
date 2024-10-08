@@ -66,6 +66,10 @@ Sorting.BubbleSort(num);
 Sorting.QuickSort(num, true);
 Sorting.PrintList(num);*/
 
+/*int[] num = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 42, 69 };
+Sorting.PrintList(num);
+//Console.WriteLine(Searching.BinarySearchRecursive(num, 69));
+Console.WriteLine(Searching.BinarySearchIterative(num, 69));*/
 watch.Stop();
 string text = watch.Elapsed.TotalSeconds.ToString(CultureInfo.InvariantCulture);
 Console.WriteLine("Time Elapsed: " + text);
