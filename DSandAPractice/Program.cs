@@ -3,8 +3,9 @@
 using System.Diagnostics;
 using System.Globalization;
 using DSandAPractice;
-using DSandAPractice.Structures;
 using DSandAPractice.Algorithms;
+using DSandAPractice.Structures;
+using DSandAPractice.AlgorithmsAndConcepts;
 
 Stopwatch watch = new Stopwatch();
 watch.Start();
@@ -54,13 +55,16 @@ Console.WriteLine(graph.DepthFirstSearch(graph[7], 7));
 basicTree.Add(new List<int>{10, 5, 15, 3, 6, 12, 17});
 basicTree.PrintInOrderTraversal(basicTree.Root);*/
 
-int[] num = {52, 168, 2, 53, 83, 1000, 625, 234, 51526, 1442, 1, 85};
-//Sorting.RadixSort(num);
-//Sorting.MergeSort(num);
-//Sorting.SelectionSort(num);
-//Sorting.BubbleSort(num);
-//Sorting.QuickSort(num, true);
-Sorting.PrintList(num);
+/*Sorting.PrintList(PrimeNumbers.Sieve(327).ToArray());
+Console.WriteLine(PrimeNumbers.IsPrime(113));*/
+
+/*int[] num = {52, 168, 2, 53, 83, 1000, 625, 234, 51526, 1442, 1, 85};
+Sorting.RadixSort(num);
+Sorting.MergeSort(num);
+Sorting.SelectionSort(num);
+Sorting.BubbleSort(num);
+Sorting.QuickSort(num, true);
+Sorting.PrintList(num);*/
 
 watch.Stop();
 string text = watch.Elapsed.TotalSeconds.ToString(CultureInfo.InvariantCulture);

@@ -1,10 +1,9 @@
 ﻿using System.Text;
 
-namespace DSandAPractice.Algorithms;
+namespace DSandAPractice.AlgorithmsAndConcepts;
 
-public class Sorting
+public static class Sorting
 {
-
     #region Sorting_Algorithms
     /// <summary>
     /// Swaps first two elements n and m if n > m
