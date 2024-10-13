@@ -20,6 +20,33 @@ public class DSA_LinkedList<T>
             Add(value);
         }
     }
+
+    /// <summary>
+    /// Creates a new linked list woven together from runners on a linkedList iterating at different "speeds"
+    /// </summary>
+    /// <param name="firstList"></param>
+    /// <param name="runner1"></param>
+    /// <param name="runner2"></param>
+    public DSA_LinkedList(DSA_LinkedList<T> firstList, int runner1, int runner2)
+    {
+        DSA_LinkedListNode<T>? root = firstList.Head;
+        int iter1 = runner1;
+        int iter2 = runner2;
+        while (root != null) {
+            iter1--;
+            iter2--;
+            if (iter1 == 0) {
+                Add(root.value);
+                iter1 = runner1;
+            }
+            if (iter2 == 0) {
+                Add(root.value);
+                iter2 = runner2;
+            }
+            root = root.next;
+        }
+    }
+    
     public void Add(T value)
     {
         if (Head == null) {
@@ -124,6 +151,18 @@ public class DSA_LinkedList<T>
         
         return sb.ToString();
     }
+
+    public T? Get(T value)
+    {
+        DSA_LinkedListNode<T?> node = Head;
+        while (node != null) {
+            if (node.value.Equals(value)) break;
+            node = node.next;
+        }
+        return node.value;
+    }
+    
+    
 }
 
 public class DSA_LinkedListNode<T> : DSA_Node<T>
